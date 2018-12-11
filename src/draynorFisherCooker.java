@@ -32,13 +32,13 @@ public class draynorFisherCooker extends Script {
     boolean banking = true;
     boolean cooking = true;
 
-    private static final Area DRAYNOR_BANK = new Area(1,1,1,1);
-    private static final Area FISHING_SPOTS = new Area(1,1,1,1);
-    private static final Area WOOD_TREES = new Area(1,1,1,1);
-    private static final Area WILLOW_TREES = new Area(1,1,1,1);
+    private static final Area DRAYNOR_BANK = new Area(3092,3241,3095,3246);
+    private static final Area FISHING_SPOTS = new Area(3085,3223,3087,3235);
+    private static final Area WOOD_TREES = new Area(3081,3241,3087,3246);
+    private static final Area WILLOW_TREES = new Area(3087,3227,3086,3238);
 
 
-    private static final String[] rawFish = {"Raw shrimp", "Raw anchovies"};
+    private static final String[] rawFish = {"Raw shrimps", "Raw anchovies"};
 
     Filter<Item> keepFilter = new Filter<Item>() {
         @Override
@@ -59,23 +59,30 @@ public class draynorFisherCooker extends Script {
         switch (getState()){
             case FISHING:
                 fish();
+                log("Fishing");
                 break;
             case BANKING:
                 bank();
+                log("Banking");
                 break;
             case DROPING:
                 drop();
+                log("Droping");
                 break;
             case COOKING:
+                log("Cooking");
                 chopAndCook();
                 break;
             case WALKING_BANK:
+                log("To the bank");
                 walkToBank();
                 break;
             case WALKING_FISH:
+                log("To the fish");
                 walkToFish();
                 break;
             case WALKING_WOODS:
+                log("To the woods");
                 walkToWoods();
                 break;
             case ERROR:
@@ -123,8 +130,9 @@ public class draynorFisherCooker extends Script {
         }
 
         if(nearsWoods()){
-            if(getInventory().contains("Raw shrimp") || getInventory().contains("Raw anchovies")){
-                chopAndCook();
+            log("In woods");
+            if(getInventory().contains("Raw shrimps") || getInventory().contains("Raw anchovies")){
+                return State.COOKING;
             } else if (getInventory().getEmptySlotCount() > 3 ){
                 return State.WALKING_FISH;
             } else if (!banking){
@@ -171,12 +179,21 @@ public class draynorFisherCooker extends Script {
         }
 
         if(!atFishSpot()){
+            log("Not at fishing spot");
             return;
         }
 
         NPC fish = getNpcs().closest(o -> o.getName().equals("Fishing spot"));
         if (fish!= null){
-            fish.interact("Net");
+            fish.interact("Small net");
+            log("Using net");
+            new ConditionalSleep(2500, 250) {
+                @Override
+                public boolean condition() throws InterruptedException {
+                    return myPlayer().isAnimating();
+                }
+            }.sleep();
+
         }
 
     }
@@ -187,12 +204,14 @@ public class draynorFisherCooker extends Script {
             return;
         }
 
-        if (!inventory.contains("Tinderbox") || !(inventory.contains("Raw anchovies")||inventory.contains("Raw shrimp")) ){
+        if (!inventory.contains("Tinderbox") || !(inventory.contains("Raw anchovies")||inventory.contains("Raw shrimps")) ){
             log("Missing tinder or raw fish");
             return;
         }
 
-        if(!(inventory.getEmptySlotCount() > 0)){
+        if((inventory.getEmptySlotCount() == 0)){
+            log("Inv full --");
+            return;
             //no room please drop something
         }
 
@@ -208,7 +227,9 @@ public class draynorFisherCooker extends Script {
 
         int i = 0;
 
-        while((getInventory().contains("Raw anchovies") || getInventory().contains("Raw shrimp")) && (i<5)) {
+        log("TEST");
+
+        while((getInventory().contains("Raw anchovies") || getInventory().contains("Raw shrimps")) && (i<5)) {
             log("We have raw fish to cook");
             i += 1;
 
@@ -264,7 +285,7 @@ public class draynorFisherCooker extends Script {
                 if (fire != null && fire.isVisible()) {
                     log("Found our fire");
                     if (getInventory().contains(rawFish[j])) {
-                        log("Selecting chicken to cook");
+                        log("Selecting fish to cook");
                         getInventory().interact("Use", rawFish[j]);
                         new ConditionalSleep(2500, 250) {
                             @Override
@@ -293,8 +314,8 @@ public class draynorFisherCooker extends Script {
 
                                 while (((System.currentTimeMillis() - timer) < timeOut) && (System.currentTimeMillis() - startTimer < maxTimeOut)) {
                                     if (getInventory().getAmount(rawFish[j]) != rawCount) {
-                                        log("We've used a raw chicken");
-                                        rawCount = getInventory().getAmount("Raw chicken");
+                                        log("We've used a raw fish");
+                                        rawCount = getInventory().getAmount(rawFish[j]);
                                         timer = System.currentTimeMillis();
                                     }
 
@@ -308,7 +329,7 @@ public class draynorFisherCooker extends Script {
                                         }
                                         if (fire.exists() && getInventory().contains(rawFish[j])) {
                                             fire.interact("Use");
-                                            log("Using chicken on fire");
+                                            log("Using fish on fire");
 
                                             //Wait to get to fire and interact
                                             sleepUntilWidget(3000, 270, 14);
@@ -328,7 +349,7 @@ public class draynorFisherCooker extends Script {
                             log("Can't find option menu (NULL)");
                         }
                     } else {
-                        log("No raw chicken in inv");
+                        log("No raw fish in inv");
                     }
 
                 } else {
@@ -372,7 +393,7 @@ public class draynorFisherCooker extends Script {
                 new ConditionalSleep(3000){
                     @Override
                     public boolean condition() throws InterruptedException {
-                        return!(getInventory().contains("Raw shrimp") || getInventory().contains("Cooked shrimp"));
+                        return!(getInventory().contains("Raw shrimps") || getInventory().contains("Cooked shrimps"));
                     }
                 }.sleep();
 

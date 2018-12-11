@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="draynorFisherCooker" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="19c79b7a-f690-4701-a378-d610f6541fe0" name="Default Changelist" comment="" />
+    <list default="true" id="19c79b7a-f690-4701-a378-d610f6541fe0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/draynorFisherCooker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/draynorFisherCooker.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/draynorFisherCooker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/draynorFisherCooker.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,17 +23,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/draynorFisherCooker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="178" column="26" lean-forward="true" selection-start-line="178" selection-start-column="26" selection-end-line="178" selection-end-column="26" />
+            <state relative-caret-position="56">
+              <caret line="279" column="11" selection-start-line="279" selection-start-column="11" selection-end-line="279" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#onLoop#0;class#draynorFisherCooker#0" />
-                <element signature="e#777#778#0" expanded="true" />
-                <element signature="e#834#835#0" expanded="true" />
                 <element signature="method#nearsWoods#0;class#draynorFisherCooker#0" />
                 <element signature="method#atBank#0;class#draynorFisherCooker#0" />
+                <element signature="method#fish#0;class#draynorFisherCooker#0" />
                 <element signature="e#10964#10965#0" expanded="true" />
                 <element signature="e#11020#11021#0" expanded="true" />
+                <element signature="method#bank#0;class#draynorFisherCooker#0" />
                 <element signature="e#11290#11291#0" expanded="true" />
                 <element signature="e#11373#11374#0" expanded="true" />
                 <element signature="e#10942#10943#0" expanded="true" />
@@ -46,6 +54,16 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>widg</find>
+      <find>shrimp</find>
+      <find>chicken</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -59,6 +77,7 @@
     <option name="width" value="1072" />
     <option name="height" value="641" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -72,11 +91,6 @@
               <item name="draynorFisherCooker" type="b2602c69:ProjectViewProjectNode" />
               <item name="draynorFisherCooker" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="draynorFisherCooker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="draynorFisherCooker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -87,12 +101,12 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544536945135" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544541437722" />
     <property name="last_opened_file_path" value="$USER_HOME$/OSBot/Scripts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
@@ -117,16 +131,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544532928366</updated>
-      <workItem from="1544532940087" duration="3879000" />
+      <workItem from="1544532940087" duration="7120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3879000" />
+    <option name="totallyTimeSpent" value="7120000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -135,6 +148,7 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980047" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
@@ -161,20 +175,33 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/draynorFisherCooker.java</url>
+          <line>175</line>
+          <properties class="draynorFisherCooker" method="fish">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/draynorFisherCooker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="178" column="26" lean-forward="true" selection-start-line="178" selection-start-column="26" selection-end-line="178" selection-end-column="26" />
+        <state relative-caret-position="56">
+          <caret line="279" column="11" selection-start-line="279" selection-start-column="11" selection-end-line="279" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onLoop#0;class#draynorFisherCooker#0" />
-            <element signature="e#777#778#0" expanded="true" />
-            <element signature="e#834#835#0" expanded="true" />
             <element signature="method#nearsWoods#0;class#draynorFisherCooker#0" />
             <element signature="method#atBank#0;class#draynorFisherCooker#0" />
+            <element signature="method#fish#0;class#draynorFisherCooker#0" />
             <element signature="e#10964#10965#0" expanded="true" />
             <element signature="e#11020#11021#0" expanded="true" />
+            <element signature="method#bank#0;class#draynorFisherCooker#0" />
             <element signature="e#11290#11291#0" expanded="true" />
             <element signature="e#11373#11374#0" expanded="true" />
             <element signature="e#10942#10943#0" expanded="true" />
